@@ -1,0 +1,43 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "vadimcn.vscode-lldb",
+        "serayuzgur.crates",
+        "streetsidesoftware.code-spell-checker",
+        "llvm-vs-code-extensions.lldb-dap"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "rust-analyzer.checkOnSave.command": "clippy",
+        "rust-analyzer.checkOnSave.allTargets": false,
+        "editor.inlayHints.enabled": "on",
+        "rust-analyzer.cargo.allFeatures": true,
+        "rust-analyzer.procMacro.enable": true
+      }
+    }
+  },
+  "remoteUser": "root",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "installYarnUsingApt": true,
+      "version": "lts",
+      "pnpmVersion": "latest",
+      "nvmVersion": "latest"
+    }
+  },
+  "forwardPorts": [8080],
+  "mounts": [
+    "source=${localEnv:USERPROFILE}\\.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  }
+}

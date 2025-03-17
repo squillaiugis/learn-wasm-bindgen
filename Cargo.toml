@@ -1,0 +1,16 @@
+[package]
+name = "learn_wasm_bindgen_workspace"
+version = "0.1.0"
+edition = "2021"
+
+# This is a dummy Cargo.toml for rust-analyzer
+# Each contest has its own Cargo.toml in its directory
+
+[workspace]
+members = [
+    # "examples/hello_world",
+    "examples/*",
+]
+
+[workspace.dependencies]
+wasm-bindgen = "0.2.100"
