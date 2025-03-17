@@ -7,14 +7,10 @@ services:
     volumes:
       - ..:/workspace:cached
       - cargo-cache:/usr/local/cargo/registry
-      - type: bind
-        source: //./pipe/openssh-ssh-agent
-        target: /ssh-agent
     command: sleep infinity
     environment:
       - RUST_BACKTRACE=1
       - RUST_LOG=debug
-      - SSH_AUTH_SOCK=/ssh-agent
 
 volumes:
   cargo-cache: 

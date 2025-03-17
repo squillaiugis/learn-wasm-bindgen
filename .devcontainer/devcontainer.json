@@ -10,8 +10,8 @@
         "tamasfe.even-better-toml",
         "vadimcn.vscode-lldb",
         "serayuzgur.crates",
-        "streetsidesoftware.code-spell-checker",
-        "llvm-vs-code-extensions.lldb-dap"
+        "llvm-vs-code-extensions.lldb-dap",
+        "eamodio.gitlens"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -33,11 +33,5 @@
       "nvmVersion": "latest"
     }
   },
-  "forwardPorts": [8080],
-  "mounts": [
-    "source=${localEnv:USERPROFILE}\\.ssh,target=/home/vscode/.ssh,type=bind,readonly"
-  ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
-  }
+  "forwardPorts": [8080]
 }
