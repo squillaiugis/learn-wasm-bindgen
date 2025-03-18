@@ -1,0 +1,17 @@
+[package]
+name = "without_a_bundler"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen.workspace = true
+web-sys = { workspace = true, features = [
+    'Document',
+    'Element',
+    'HtmlElement',
+    'Node',
+    'Window',
+] }
